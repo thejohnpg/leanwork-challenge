@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,400&display=swap');
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.container > .sectionImage {
+    width: 70%;
+}
+
+.container > .sectionImage > img {
+    width: 100%;
+    height: 100%;
+}
+
+.container > .sectionImage > img:hover > .overlay{
+    margin-right: 1%;
+    background-color: #000;
+}
+
+.container > .sectionSignUp {
+    width: 30%;
+}
+
+.container > .sectionSignUp form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container > .sectionSignUp h1 {
+  width: 80%;
+  color: #000;
+  font-weight: 300;
+  font-size: 2.5em;
+  letter-spacing: .100em;
+  text-align: start;
+}
+
+.container > .sectionSignUp form .inputValues {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 16px;
+}
+
+.container > .sectionSignUp form .inputValues > .label {
+  display: flex;
+  color: #999999;
+}
+
+.container > .sectionSignUp form .inputValues > input {
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 30;
+  color: #efeeed;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 8px 4px 8px;
+  outline: none;
+}
+
+.container > .sectionSignUp form .inputValues > input:focus {
+  color: #555555;
+}
+
+.container > .sectionSignUp form div.divButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container > .sectionSignUp form div.divButton > button {
+  border-radius: 16px;
+  color: #fff;
+  border: none;
+}
+
+.container > .sectionSignUp form div.divButton > button.buttonSignUp {
+  background-color: #40c8f4;
+  width: 15rem;
+  height: 3em;
+  cursor: pointer;
+  transition: opacity 250ms;
+}
+
+.container > .sectionSignUp form div.divButton > button.buttonSignUp:hover {
+  opacity: 0.7;
+}
+
+.container > .sectionSignUp form div.divButton > button.buttonLogin {
+  background-color: #fff;
+  color: #555555;
+  width: 10rem;
+  height: 3em;
+  cursor: pointer;
+}
+
