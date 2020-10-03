@@ -2,28 +2,51 @@
 
 * {
   font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
+}
+
+*::selection {
+  background-color: #2179b5;
+  color: #fff;
 }
 
 .container {
   display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container > .sectionImage {
-    width: 70%;
+    width: 80vw;
+    user-select: none;
 }
 
 .container > .sectionImage > img {
-    width: 100%;
-    height: 100%;
+  width: 80vw;
+  height: 100vh;
+  user-select: none;
 }
 
-.container > .sectionImage > img:hover > .overlay{
-    margin-right: 1%;
-    background-color: #000;
+.overlay{
+  width: 80vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.7;
+  animation-name: overlay;
+  animation-duration: 3s;
+  animation-delay: 150ms;
+  background-color: #2179b5;
+  animation-timing-function: ease-in;
+}
+
+@keyframes overlay {
+  from {background-color: #40c8f4;}
+  to {background-color: #2179b5 ;}
 }
 
 .container > .sectionSignUp {
-    width: 30%;
+    width: 20vw;
 }
 
 .container > .sectionSignUp form {
@@ -75,14 +98,16 @@
 }
 
 .container > .sectionSignUp form div.divButton > button {
-  border-radius: 16px;
+  border-radius: 24px;
   color: #fff;
   border: none;
+  outline: none;
+  user-select: none;
 }
 
 .container > .sectionSignUp form div.divButton > button.buttonSignUp {
   background-color: #40c8f4;
-  width: 15rem;
+  width: 10rem;
   height: 3em;
   cursor: pointer;
   transition: opacity 250ms;
@@ -95,8 +120,9 @@
 .container > .sectionSignUp form div.divButton > button.buttonLogin {
   background-color: #fff;
   color: #555555;
-  width: 10rem;
+  width: 7rem;
   height: 3em;
   cursor: pointer;
+
 }
 
