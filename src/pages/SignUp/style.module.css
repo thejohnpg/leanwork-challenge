@@ -9,6 +9,11 @@
   color: #fff;
 }
 
+a {
+  outline: none;
+  text-decoration: none; 
+}
+
 .container {
   display: grid;
   grid-template-rows: 40vh auto;
@@ -101,6 +106,7 @@
 .container > .sectionSignUp form div.divButton {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -124,7 +130,7 @@
   opacity: 0.7;
 }
 
-.container > .sectionSignUp form div.divButton > button.buttonLogin {
+button.buttonLogin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,6 +139,8 @@
   width: 7rem;
   height: 3em;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 @media (min-width: 1440px) {
