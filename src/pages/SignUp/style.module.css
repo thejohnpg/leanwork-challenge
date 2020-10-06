@@ -143,6 +143,11 @@ button.buttonLogin {
   border: none;
 }
 
+.msgRedirect {
+  padding: 8px;
+  margin-top: 1em;
+}
+
 @media (min-width: 1440px) {
   .container {
     display: grid;

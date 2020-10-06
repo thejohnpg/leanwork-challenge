@@ -9,8 +9,6 @@ export default function Home() {
   const localCPF = localStorage.getItem('@lean-signup/cpf');
   const localTelefone = localStorage.getItem('@lean-signup/telefone');
   
-  console.log(localName)
-  console.log(localEmail)
   return(
     <div>
       <h1>Home</h1>

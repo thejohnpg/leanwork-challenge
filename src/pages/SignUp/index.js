@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Link  } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import style from "./style.module.css";
 
@@ -8,21 +8,19 @@ import Background from "./../../assets/bg.webp";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-// import firebase from "./../../firebase";
-
 export default function Signup() {
 
-  const [ name, setName ] = useState("");
-  const [ email, setEmail ] = useState("");
-  const [ cpf, setCPF ] = useState("");
-  const [ telefone, setTelefone ] = useState("");
+  let history = useHistory();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [cpf, setCPF] = useState("");
+  const [telefone, setTelefone] = useState("");
+
+  const [msgRedirect, setmsgRedirect] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   console.log(name)
-
-  // const username = localStorage.getItem('@lean-signup/name');
-  // const email = localStorage.getItem('@lean-signup/email');
-  // const cpf = localStorage.getItem('@lean-signup/cpf');
-  // const telefone = localStorage.getItem('@lean-signup/telefone');
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -31,9 +29,15 @@ export default function Signup() {
     localStorage.setItem(`@lean-signup/cpf`, `${cpf}`);
     localStorage.setItem(`@lean-signup/telefone`, `${telefone}`);
 
+    setRedirect(true);
+
+    setmsgRedirect(`${name}, por favor aguarde, você será redirecionado ...`)
+
+    setTimeout(() => {
+      history.push("/home")
+    }, 2000)
   }
 
-  
   return (
     <div className={style.container}>
       <section class={style.sectionImage}>
@@ -69,13 +73,15 @@ export default function Signup() {
             <button class={style.buttonSignUp} onClick={handleSubmit}> Cadastrar </button>
 
             <Link to="/home">
-            <button class={style.buttonLogin} >
-              <span> Login </span>
-              <AiOutlineArrowRight size={16} />
-            </button>
-          </Link>
+              <button class={style.buttonLogin} >
+                <span> Login </span>
+                <AiOutlineArrowRight size={16} />
+              </button>
+            </Link>
 
           </div>
+
+          <span className={style.msgRedirect}>{msgRedirect}</span>
 
         </form>
       </section>
