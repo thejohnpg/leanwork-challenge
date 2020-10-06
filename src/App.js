@@ -10,17 +10,17 @@ import firebase from "./firebase";
 import Background from "./assets/bg.webp";
 
 function App() {
-  useEffect(() => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword("email@gmail.com", "123456")
-      .catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
-  });
+  // useEffect(() => {
+  //   firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword("email@gmail.com", "123456")
+  //     .catch(function (error) {
+  //       // Handle Errors here.
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // ...
+  //     });
+  // });
 
   return (
     <div className="App">
@@ -33,7 +33,7 @@ function App() {
         </section>
 
         <section class={style.sectionSignUp}>
-          <form action="" class={style.form}>
+          <form class={style.form}>
             <h1> Lean Cadastro </h1>
 
             <div class={style.inputValues}>
