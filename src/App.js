@@ -4,12 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import "./App.css";
 
-import style from "./style.module.css";
-
 import Routes from './routes';
-
-import Home from './pages/Home';
-
 
 function App() {
   // useEffect(() => {
@@ -29,9 +24,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes />
-        
       </BrowserRouter>
-     
     </div>
 
   );
