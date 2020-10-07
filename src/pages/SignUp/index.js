@@ -8,6 +8,8 @@ import Background from "./../../assets/bg.webp";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
+import InputMask from "react-input-mask";
+
 export default function Signup() {
 
   let history = useHistory();
@@ -20,10 +22,10 @@ export default function Signup() {
   const [msgRedirect, setmsgRedirect] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  console.log(name)
+  const [incompleteData, setIcompleteData] = useState(false);
 
-  function handleSubmit(event){
-    event.preventDefault()
+  function handleSubmit(event) {
+    event.preventDefault(cpf, telefone)
 
     if (name | email | cpf | telefone) {
       localStorage.setItem(`@lean-signup/name`, `${name}`);
@@ -41,7 +43,18 @@ export default function Signup() {
     }
     else {
       setmsgRedirect(`Por favor, insira todos os dados solicitados ...`)
+
+      setIcompleteData(true);
+      //sorry the gambiarra
+      setTimeout(() => {
+        setIcompleteData(false);
+      }, 500)
     }
+  }
+
+  function handleNewPhone(event) {
+    let newPhone = event.target.value;
+    setTelefone(newPhone)
   }
 
   return (
@@ -57,26 +70,26 @@ export default function Signup() {
 
           <div class={style.inputValues}>
             <span class={style.label}> Nome Completo </span>
-            <input type="text" name="name" onChange={event => setName(event.target.value)} />
+            <input type="text" name="name" onChange={event => setName(event.target.value)} autoComplete="off" />
           </div>
 
           <div class={style.inputValues}>
             <span class={style.label}> Email </span>
-            <input type="text" name="email" onChange={event => setEmail(event.target.value)} />
+            <input type="text" name="email" onChange={event => setEmail(event.target.value)} autoComplete="off" />
           </div>
 
           <div class={style.inputValues}>
             <span class={style.label}> CPF </span>
-            <input type="text" name="cpf" onChange={event => setCPF(event.target.value)} />
+            <input type="text" name="cpf" onChange={event => setCPF(event.target.value)} autoComplete="off" maxLength={11} />
           </div>
 
           <div class={style.inputValues}>
             <span class={style.label}> Telefone </span>
-            <input type="text" name="telefone" onChange={event => setTelefone(event.target.value)} />
+            <InputMask mask="+55 (99) 99999 9999" type="text" name="telefone" onChange={handleNewPhone} autoComplete="0" />
           </div>
 
           <div class={style.divButton}>
-            <button class={style.buttonSignUp} onClick={handleSubmit}> Cadastrar </button>
+            <button className={`${incompleteData ? "animate__animated animate__headShake" : ""} ${style.buttonSignUp}`} onClick={handleSubmit}> Cadastrar </button>
 
             {
               name || email || cpf || telefone ?
@@ -90,7 +103,7 @@ export default function Signup() {
 
           </div>
 
-          <span className={style.msgRedirect}>{msgRedirect}</span>
+          <span className={`${style.msgRedirect}`}>{msgRedirect}</span>
 
         </form>
       </section>
