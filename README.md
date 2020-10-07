@@ -9,6 +9,11 @@ Para rodar o projeto em seu pc, siga as instruções abaixo:
 * digite ```yarn``` ou ```npm install``` para instalar as dependências
 * Depois disso pode startar o servidor digitando ```yarn start``` ou ```npm start```
 
+Ahh sim, e também tem uma versão [DEMO](https://leanwork-challenge.vercel.app) para testes.
+
+|Versão Demo|https://leanwork-challenge.vercel.app  | ✅
+|--|--|--|
+
 
 *O Projeto é simples e usa o LocalStorage para persistir as informações solicitadas na tela Inicial, como podemos ver na imagem a seguir*
 
