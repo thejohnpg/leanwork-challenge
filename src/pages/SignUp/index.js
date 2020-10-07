@@ -22,7 +22,7 @@ export default function Signup() {
 
   console.log(name)
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event){
     event.preventDefault()
 
     if (name | email | cpf | telefone) {
