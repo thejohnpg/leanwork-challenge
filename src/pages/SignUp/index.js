@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Link, useHistory } from 'react-router-dom';
 
@@ -24,18 +24,24 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    localStorage.setItem(`@lean-signup/name`, `${name}`);
-    localStorage.setItem(`@lean-signup/email`, `${email}`);
-    localStorage.setItem(`@lean-signup/cpf`, `${cpf}`);
-    localStorage.setItem(`@lean-signup/telefone`, `${telefone}`);
 
-    setRedirect(true);
+    if (name | email | cpf | telefone) {
+      localStorage.setItem(`@lean-signup/name`, `${name}`);
+      localStorage.setItem(`@lean-signup/email`, `${email}`);
+      localStorage.setItem(`@lean-signup/cpf`, `${cpf}`);
+      localStorage.setItem(`@lean-signup/telefone`, `${telefone}`);
 
-    setmsgRedirect(`${name}, por favor aguarde, você será redirecionado ...`)
+      setRedirect(true);
 
-    setTimeout(() => {
-      history.push("/home")
-    }, 2000)
+      setmsgRedirect(`${name}, por favor aguarde, você será redirecionado ...`)
+
+      setTimeout(() => {
+        history.push("/home")
+      }, 2000)
+    }
+    else {
+      setmsgRedirect(`Por favor, insira todos os dados solicitados ...`)
+    }
   }
 
   return (
@@ -72,12 +78,15 @@ export default function Signup() {
           <div class={style.divButton}>
             <button class={style.buttonSignUp} onClick={handleSubmit}> Cadastrar </button>
 
-            <Link to="/home">
-              <button class={style.buttonLogin} >
-                <span> Login </span>
-                <AiOutlineArrowRight size={16} />
-              </button>
-            </Link>
+            {
+              name || email || cpf || telefone ?
+                <Link to="/home">
+                  <button class={style.buttonLogin} >
+                    <span> Login </span>
+                    <AiOutlineArrowRight size={16} />
+                  </button>
+                </Link> : ""
+            }
 
           </div>
 
