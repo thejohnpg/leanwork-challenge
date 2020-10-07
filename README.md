@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LeanWork Challenge
 
-## Available Scripts
+Algumas informações pertinentes:
+O Projeto foi construido em React, sem a necessidade de um backend, também nao foi integrado com banco de dados, utilizado o Local Storage para armazenamento de informações. O projeto tambem utiliza algumas bibliotecas como React Router DOM, Style Module, React Icons, React Input Mask.
 
-In the project directory, you can run:
+Para rodar o projeto em seu pc, siga as instruções abaixo:
+* Faça o Download do Projeto, digite ```git clone https://github.com/thejohnpg/leanwork-challenge.git``` ou copiando diretamente no botão Code, logo acima.
+* entre na pasta raiz, digitando ```cd leanwork-challenge```
+* digite ```yarn``` ou ```npm install``` para instalar as dependências
+* Depois disso pode startar o servidor digitando ```yarn start``` ou ```npm start```
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*O Projeto é simples e usa o LocalStorage para persistir as informações solicitadas na tela Inicial, como podemos ver na imagem a seguir*
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Tela Inicial](https://i.ibb.co/sCtKFsk/image.png)
 
-### `yarn test`
+*No Form há alguns tratamentos de erros, há outros tratamentos aos quais podem ser realizados ainda*
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Form de inserção de Dados](https://i.ibb.co/t37kWMT/image.png)
 
-### `yarn build`
+Se vc clicar no botao Login, sem ainda ter preenchido todas as informações, uma tela de erro é apresentada, exemplificado na imagem abaixo
+![Página 404](https://i.ibb.co/SxC4sjp/image.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Yeah, I love cats !
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+*E por ultimo, mas nao menos importante temos a nossa tela da Home, contendo o Nome recuperado da LocalStorage e os dados plotados no placeholder de cada input, é possivel alterar cada valor, colocando um novo valor no input e clicando em 'Atualizar Informações' e o Botao 'Sair' que por sua vez, limpa o localStorage e envia você novamente a tela Inicial*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Tela Home com os dados](https://i.ibb.co/KVdbh1L/image.png)
 
-### `yarn eject`
+*Ah e um detalhe importante, a aplicação toda é responsiva, foi usado o conceito de mobile first para construção do mesmo, veja abaixo a versão mobile*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Versão Mobile](https://i.ibb.co/fMfGwpR/image.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Há ainda alguns erros que podem ser tratados de outras formas, também há o que poderiamos chamar de gambiarra e você provavelmente vai encontrar isso se procurar por "gambiarra" dando um ````ctrl f``` no seu VS Code, não me julgue, ok?

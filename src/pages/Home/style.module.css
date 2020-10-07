@@ -14,19 +14,12 @@
   color: rgb(162, 162, 162);
 }
 
-@media (min-width: 1024px) {
-  .pageError img {
-    width: 35vh;
-    min-width: 35vh;
-  }
-}
-
 .dataInfo {
   padding: 8px 4px;
 }
 
 .dataDivInfo{
-  width: 50vh;
+  width: 50vw;;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,3 +106,20 @@
   left: 25%;
   right: 25%;
  }
+
+ @media (min-width: 1024px) {
+  .pageError img {
+    width: 35vh;
+    min-width: 35vh;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .dataDivInfo{
+    width: 80vw
+  }
+  .buttonUpdate {
+    width: 50%;
+  }
+}
